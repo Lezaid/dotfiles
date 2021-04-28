@@ -1,0 +1,15 @@
+
+# Ignore everything
+/*
+!.gitignore
+!.gitmodules
+
+# Except for the files and folders we want to track
+!README.md
+!.bashrc
+!.zshrc
+!.xsession
+!.xprofile
+!.Xresources
+!.config
+!.local

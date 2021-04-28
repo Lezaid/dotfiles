@@ -1,0 +1,3 @@
+[submodule ".config/my-resources/wallpapers"]
+	path = .config/my-resources/wallpapers
+	url = https://github.com/Lezaid/wallpapers

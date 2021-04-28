@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+import openrazer.client
+
+
+a = openrazer.client.DeviceManager()
+# a.turn_off_on_screensaver = False
+for device in a.devices:
+    device.brightness = 100
+    device.fx.static(208, 208, 208)
+    # if device.type == "mouse":
+    #     device.poll_rate = 500
