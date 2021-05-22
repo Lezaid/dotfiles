@@ -1,12 +1,12 @@
 Xcursor.theme: Breeze
 
-Xft.dpi: 108
+Xft.dpi: 109
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
-Xft.autohint: true
+Xft.autohint: false
 Xft.hintstyle: hintfull
-Xft.lcdfilter: lcdfilter
+Xft.lcdfilter: lcddefault
 
 XTerm*renderFont: true
 XTerm*faceName: xft:Mononoki Nerd Font

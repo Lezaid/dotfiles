@@ -1,16 +1,16 @@
 configuration {
-	modi: "window,run,ssh";																			/* Enabled modi */
+	modi: "window,run,ssh,combi,drun";																			/* Enabled modi */
 	width: 50;																						/* Window width */
 	lines: 15;																						/* Number of lines */
 	columns: 1;																						/* Number of columns */
-	font: "mono 12";																				/* Font to use */
+	font: "UbuntuMono Nerd Font 14";																				/* Font to use */
 	bw: 1;																							/* Border width */
 	location: 0;																					/* Location on screen */
 	padding: 5;																						/* Padding */
 	yoffset: 0;																						/* Y-offset relative to location */
 	xoffset: 0;																						/* X-offset relative to location */
-	fixed-num-lines: false;																			/* Always show number of lines */
-	show-icons: false;																				/* Whether to load and show icons */
+	fixed-num-lines: true;																			/* Always show number of lines */
+	show-icons: true;																				/* Whether to load and show icons */
 	terminal: "rofi-sensible-terminal";																/* Terminal to use */
 	ssh-client: "ssh";																				/* Ssh client to use */
 	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";									/* Ssh command to execute */
@@ -19,26 +19,23 @@ configuration {
 	run-shell-command: "{terminal} -e {cmd}";														/* Run command to execute that runs in shell */
 	window-command: "wmctrl -i -R {window}";														/* Command to executed when -kb-accept-alt binding is hit on selected window */
 	window-match-fields: "all";																		/* Window fields to match in window mode */
-	icon-theme: "";																					/* Theme to use to look for icons */
-	drun-match-fields: "name,generic,exec,categories,keywords";										/* Desktop entry fields to match in drun */
-	drun-categories: "";																			/* Only show Desktop entry from these categories */
+	icon-theme: "Papirus";																					/* Theme to use to look for icons */
+	drun-match-fields: "name,generic,exec,categories";										/* Desktop entry fields to match in drun */
 	drun-show-actions: false;																		/* Desktop entry show actions. */
 	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";	/* DRUN format string. (Supports: generic,name,comment,exec,categories) */
-	drun-url-launcher: "xdg-open";																	/* Command to open an Desktop Entry that is a Link. */
 	disable-history: false;																			/* Disable history in run/ssh */
 	ignored-prefixes: "";																			/* Programs ignored for history */
 	sort: false;																					/* Use sorting */
-	sorting-method: "normal";																		/* Choose the strategy used for sorting: normal (levenshtein) or fzf. */
 	case-sensitive: false;																			/* Set case-sensitivity */
-	cycle: false;																					/* Cycle through the results list */
+	cycle: true;																					/* Cycle through the results list */
 	sidebar-mode: false;																			/* Enable sidebar-mode */
 	eh: 1;																							/* Row height (in chars) */
 	auto-select: false;																				/* Enable auto select mode */
 	parse-hosts: false;																				/* Parse hosts file for ssh mode */
-	parse-known-hosts: false;																		/* Parse known_hosts file for ssh mode */
-	combi-modi: "window,run";																		/* Set the modi to combine in combi mode */
+	parse-known-hosts: true;																		/* Parse known_hosts file for ssh mode */
+	combi-modi: "window,drun,shh";																		/* Set the modi to combine in combi mode */
 	matching: "normal";																				/* Set the matching algorithm. (normal, regex, glob, fuzzy) */
-	tokenize: false;																				/* Tokenize input string */
+	tokenize: true;																				/* Tokenize input string */
 	m: "-5";																						/* Monitor id to show on */
 	line-margin: 2;																					/* Margin between rows *DEPRECATED* */
 	line-padding: 1;																				/* Padding within rows *DEPRECATED* */
@@ -52,9 +49,9 @@ configuration {
 	scroll-method: 0;																				/* Scrolling method. (0: Page, 1: Centered) */
 	fake-background: "screenshot";																	/* Background to use for fake transparency. (background or screenshot) *DEPRECATED* */
 	window-format: "{w}    {c}   {t}";																/* Window Format. w (desktop name), t (title), n (name), r (role), c (class) */
-	click-to-exit: false;																			/* Click outside the window to exit */
-	show-match: false;																				/* Indicate how it match by underlining it. */
-	theme: "/usr/share/rofi/themes/Monokai.rasi";													/* New style theme file */
+	click-to-exit: true;																			/* Click outside the window to exit */
+	show-match: true;																				/* Indicate how it match by underlining it. */
+	theme: "onedark";													/* New style theme file */
 	max-history-size: 25;																			/* Max history size (WARNING: can cause slowdowns when set to high). */
 	combi-hide-mode-prefix: false;																	/* Hide the prefix mode prefix on the combi view. */
 	window-thumbnail: false;																		/* Show window thumbnail (if available) as icon in window switcher. */
@@ -135,3 +132,4 @@ configuration {
 	me-accept-entry: "MouseDPrimary";																/* Accept hovered row */
 	me-accept-custom: "Control+MouseDPrimary";														/* Accept hovered row with custom action */
 }
+@import "/usr/share/rofi/themes/onedark.rasi"
