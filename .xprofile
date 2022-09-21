@@ -4,12 +4,17 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_STYLE_OVERRIDE=kvantum
 
 # Screens
-# hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
+# screenport=`xrandr | grep ' connected' | awk '{print $1}'`
 
-# if [ "$hdmi" = "HDMI-1" ]; then
+# if [ "$screenport" = "HDMI-1" ]; then
 #   xrandr --output eDP-1 --primary --mode 1366x768 --pos 276x1080 --output HDMI-1 --mode 1920x1080 --pos 0x0 &
+#    xrandr --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 2560x0 &
+# elif [ "$screenport" = "DP-4" ]; then
+#    xrandr --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-4 --mode 1920x1080 --pos 2560x0 &
+#    xrandr --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-4 --mode 1920x1080 --right-of DP-0 &
+# xrandr --dpi 109 --output DP-0 --primary --mode 2560x1440 --rate 144 --pos 0x0 --rotate normal --output DP-4 --mode 1920x1080 --rate 144 --pos 2560x0
 # else
-#   xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off &
+   # xrandr --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output HDMI-0 --off &
 # fi
 
 # Composer

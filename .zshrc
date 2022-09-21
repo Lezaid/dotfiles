@@ -16,11 +16,11 @@ if [[ $(grml_status_features promptinit) == success ]]; then
     }
 
     export grml_prompt_pre_default[user]='%B%F{cyan}'
-    export grml_prompt_pre_default[host]='%B%F{white}@'
+    export grml_prompt_pre_default[host]='%B%F{green}'
     export grml_prompt_post_default[host]='%f%b'
     export grml_prompt_pre_default[path]=' %B%F{magenta}'
     export grml_prompt_post_default[path]='%f%b '
-    grml_theme_add_token upperleftcorner '%(?:%B%F{green}╭─%f%b:%B%F{red}╭─%f%b)' # Best with "JetBrainsMonoMedium Nerd Font"
+    grml_theme_add_token upperleftcorner '%(?:%B%F{green}╭─@%f%b:%B%F{red}╭─@%f%b)' # Best with "JetBrainsMonoMedium Nerd Font"
     grml_theme_add_token lowerleftcorner '%(?:%B%F{green}╰─%f%b:%B%F{red}╰─%f%b)' # Best with "JetBrainsMonoMedium Nerd Font"
     grml_theme_add_token openbracket '['
     grml_theme_add_token closebracket ']'
@@ -60,3 +60,6 @@ alias tree='exa -T'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /usr/share/nvm/init-nvm.sh
+

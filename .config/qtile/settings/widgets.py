@@ -25,7 +25,7 @@ def powerline_arrow(fg='light', bg='dark'):
         **get_widgetground_colors(fg, bg),
         text='', # Icon: nf-oct-triangle_left
         fontsize=37,
-        padding=-2
+        padding=-3
     )
 
 def workspaces(): 
@@ -68,6 +68,7 @@ def updates_powerline(fg='color4', bg='dark'):
             colour_have_updates=colors['text'],
             colour_no_updates=colors['text'],
             no_update_string='0',
+            distro='Arch',
             display_format='{updates}',
             update_interval=1800,
             custom_command='checkupdates', # Require: pacman-contrib (pacman)

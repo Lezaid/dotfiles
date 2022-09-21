@@ -70,6 +70,7 @@ keys = [Key(key[0], key[1], key[2], desc=key[3]) for key in [
 
     # Screenshot
     ([mod], "s", lazy.spawn("flameshot gui"), "Launch flameshot"),
+    ([mod, "shift"], "s", lazy.spawn("flameshot screen -p /home/leonardo/Documents"), "Launch flameshot"),
 
     # ------------ Hardware Configs ------------
 
