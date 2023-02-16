@@ -123,7 +123,7 @@ def systray_powerline(fg='dark', bg='color1'):
 
 widget_defaults = {
     'font': 'UbuntuMono Nerd Font Bold',
-    'fontsize': 14,
+    'fontsize': 15,
     'padding': 1,
 }
 
