@@ -22,7 +22,7 @@ configuration {
 	icon-theme: "Papirus";																					/* Theme to use to look for icons */
 	drun-match-fields: "name,generic,exec,categories";										/* Desktop entry fields to match in drun */
 	drun-show-actions: false;																		/* Desktop entry show actions. */
-	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";	/* DRUN format string. (Supports: generic,name,comment,exec,categories) */
+	drun-display-format: " {name} [<span weight='light' size='small'><i>({generic})</i></span>]";	/* DRUN format string. (Supports: generic,name,comment,exec,categories) */
 	disable-history: false;																			/* Disable history in run/ssh */
 	ignored-prefixes: "";																			/* Programs ignored for history */
 	sort: false;																					/* Use sorting */

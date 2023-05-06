@@ -3,22 +3,28 @@ from pulsectl import Pulse, PulseLoopStop
 import sys
 
 
-# Adapt to your use-case
-sink_id = 0
+# Adapt to your use-case (sink index)
+sink_idx = 5
+sink_keyword = 'SMSL'
 with Pulse() as pulse:
     def callback(ev):
-        if ev.index == sink_id:
+        if ev.index == sink_idx:
             raise PulseLoopStop
-
     try:
         pulse.event_mask_set('sink')
         pulse.event_callback_set(callback)
-        last_value = round(pulse.sink_list()[sink_id].volume.value_flat * 100)
-        last_mute = pulse.sink_list()[sink_id].mute == 1
+        # sink = [item for item in pulse.sink_list() if item.index == sink_idx][0]
+        sink = next((item for item in pulse.sink_list() if item.index == sink_idx), None)
+        if not sink:
+            sink = next((item for item in pulse.sink_list() if sink_keyword in item.description), None)
+            sink_idx = sink.index
+        last_value = round(sink.volume.value_flat * 100)
+        last_mute = sink.mute == 1
         while True:
             pulse.event_listen()
-            value = round(pulse.sink_list()[sink_id].volume.value_flat * 100)
-            mute = pulse.sink_list()[sink_id].mute == 1
+            sink = next((item for item in pulse.sink_list() if item.index == sink_idx), None)
+            value = round(sink.volume.value_flat * 100)
+            mute = sink.mute == 1
             if value != last_value or mute != last_mute:
                 print(value, end='')
                 if mute:

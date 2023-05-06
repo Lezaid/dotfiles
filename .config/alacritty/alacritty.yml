@@ -1,6 +1,6 @@
 colors:
   bright:
-    black: '0x282a40'
+    black: '0x42445a'
     blue: '0xa3c5ff'
     cyan: '0x98fffd'
     green: '0xe0ffad'
@@ -19,23 +19,22 @@ colors:
     yellow: '0xffd47e'
   primary:
     background: '0x0f101a'
-    foreground: '0xc5c9de'
+    foreground: '0xd2d6eb'
 cursor:
   style: Beam
 font:
   bold:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
   offset:
     x: 0
     y: -1
   size: 10
-  # use_thin_strokes: false
 window:
   opacity: 0.95
   padding:
     x: 5
-    y: 3
+    y: 5

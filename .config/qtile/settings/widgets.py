@@ -3,6 +3,9 @@
 from libqtile import widget
 
 from settings.theme import colors, get_widgetground_colors, get_widget_format
+from settings.path import qtile_path
+
+from os import path
 
 
 def separator():
@@ -23,9 +26,9 @@ def icon(fg='text', bg='dark', fontsize=16, text='?'):
 def powerline_arrow(fg='light', bg='dark'):
     return widget.TextBox(
         **get_widgetground_colors(fg, bg),
-        text='', # Icon: nf-oct-triangle_left
-        fontsize=37,
-        padding=-3
+        text='', # Icon: nf-pl-right_hard_divider
+        fontsize=30,
+        padding=0
     )
 
 def workspaces(): 
@@ -92,6 +95,7 @@ def layout_powerline(fg='color2', bg='color3'):
         powerline_arrow(fg, bg),
         widget.CurrentLayoutIcon(
             **get_widgetground_colors(bg=fg),
+            custom_icon_paths=[path.join(qtile_path, 'icons', 'layout')],
             scale=0.65
         ),
         widget.CurrentLayout(
@@ -104,7 +108,7 @@ def layout_powerline(fg='color2', bg='color3'):
 def datetime_powerline(fg='color1', bg='color2'): 
     return [
         powerline_arrow(fg, bg),
-        icon(bg=fg, text=' '), # Icon: nf-mdi-calendar_clock
+        icon(bg=fg, text='󰃰 '), # Icon: nf-mdi-calendar_clock
         widget.Clock(
             **get_widgetground_colors(bg=fg),
             format='%a %d %b %Y - %H:%M',

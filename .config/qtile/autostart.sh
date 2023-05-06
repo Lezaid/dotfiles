@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # systray volume
-volumeicon &
+pa-applet &
 # screenshot app (systray)
 flameshot &

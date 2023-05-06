@@ -7,5 +7,7 @@ a = openrazer.client.DeviceManager()
 for device in a.devices:
     device.brightness = 100
     device.fx.static(208, 208, 208)
-    # if device.type == "mouse":
-    #     device.poll_rate = 500
+    if device.type == "mouse":
+        print(device.dpi);
+        device.dpi = (900, 900);
+        # device.poll_rate = 500

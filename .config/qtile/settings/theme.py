@@ -4,7 +4,7 @@ from settings.utils import StrCustom
 from settings.path import qtile_path
 
 from os import path
-import subprocess
+# import subprocess
 import json
 
 
@@ -27,7 +27,9 @@ def load_theme():
     with open(path.join(theme_file)) as f:
         return json.load(f)
 
-if __name__ == "settings.theme":
+if __name__ == '__main__':
+    load_theme()
+else:
     colors = load_theme()
 
     def get_widgetground_colors(fg='text', bg='dark'): 
