@@ -1,0 +1,34 @@
+#!/bin/bash
+# To Run: openvpn-auth <Configuration file name>
+CONF_FILE=$1.conf
+AUTH_FILE=$1-authfile
+FILE_DIR=$HOME/.local/etc/openvpn/client/
+echo Configuration file: $CONF_FILE
+echo Auth file: $AUTH_FILE
+echo Directory: $FILE_DIR 
+
+if [[ ! -f "$FILE_DIR$CONF_FILE" ]]
+  then
+    echo 'Configuration file not found!'
+    exit 2
+fi
+if [[ ! -f "$FILE_DIR$AUTH_FILE" ]]
+  then
+    echo 'Auth file not found!'
+    exit 2
+fi
+
+USER=$(awk 'NR == 1' < $FILE_DIR$AUTH_FILE)
+PASS=$(awk 'NR == 2' < $FILE_DIR$AUTH_FILE)
+IS_2FA=$(awk 'NR == 3' < $FILE_DIR$AUTH_FILE)
+
+CODE_2FA=''
+if [[ $IS_2FA = "true" ]]
+  then
+    read -r -p "Please enter the two-factor authentication code: " CODE_2FA
+fi
+
+exe_openvpn() {
+  echo -e "${USER}\n${PASS}${CODE_2FA}" | sudo openvpn --config ${FILE_DIR}${CONF_FILE} --auth-user-pass /dev/stdin
+}
+exe_openvpn

@@ -73,7 +73,7 @@ def updates_powerline(fg='color4', bg='dark'):
             no_update_string='0',
             distro='Arch',
             display_format='{updates}',
-            update_interval=1800,
+            update_interval=1800, # Seconds
             custom_command='checkupdates', # Require: pacman-contrib (pacman)
             padding=3
         )
